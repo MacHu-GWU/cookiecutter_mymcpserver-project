@@ -18,6 +18,9 @@ class EnvVar(BaseModel):
     name: str = Field()
     default: str = Field(default="")
 
+    def exists(self) -> bool:
+        return self.name in os.environ
+
     @property
     def value(self) -> str:
         return os.environ.get(self.name, self.default)

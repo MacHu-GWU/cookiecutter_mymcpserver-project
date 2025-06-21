@@ -19,8 +19,8 @@ dir_home = Path.home()
 
 
 class MCPEnum(BaseMcpEnum):
-    COOKIECUTTER_MYMCPSERVER_DEV = Mcp(
-        name=f"{PACKAGE_NAME}_dev",
+    COOKIECUTTER_MYMCPSERVER_DEV_PYTHON = Mcp(
+        name=f"{PACKAGE_NAME}_dev_python",
         settings={
             "command": f"{dir_venv_bin}/python",
             "args": [
@@ -29,6 +29,23 @@ class MCPEnum(BaseMcpEnum):
             "env": {
                 EnvVarEnum.COOKIECUTTER_MYMCPSERVER_CONFIG.name: f"{path_sample_config}",
             },
+        },
+    )
+    COOKIECUTTER_MYMCPSERVER_DEV_CLI = Mcp(
+        name=f"{PACKAGE_NAME}_dev_cli",
+        settings={
+            "command": f"{dir_venv_bin}/cookiecuttermymcpserver",
+            "args": [
+                "--config",
+                f"{path_sample_config}",
+            ],
+        },
+    )
+    COOKIECUTTER_MYMCPSERVER_DEV_DOCKER = Mcp(
+        name=f"{PACKAGE_NAME}_dev_docker",
+        settings={
+            "command": "docker",
+            "args": ["run", "-i", "--rm", "cookiecutter-mymcpserver:latest"],
         },
     )
     COOKIECUTTER_MYMCPSERVER_PRE_RELEASE = Mcp(
@@ -58,7 +75,9 @@ class MCPEnum(BaseMcpEnum):
 
 
 wanted_mcps = {
-    MCPEnum.COOKIECUTTER_MYMCPSERVER_DEV,
+    # MCPEnum.COOKIECUTTER_MYMCPSERVER_DEV_PYTHON,
+    MCPEnum.COOKIECUTTER_MYMCPSERVER_DEV_CLI,
+    # MCPEnum.COOKIECUTTER_MYMCPSERVER_DEV_DOCKER,
     # MCPEnum.COOKIECUTTER_MYMCPSERVER_PRE_RELEASE,
     # MCPEnum.COOKIECUTTER_MYMCPSERVER,
 }
