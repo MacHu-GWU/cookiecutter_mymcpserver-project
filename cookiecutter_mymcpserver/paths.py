@@ -35,3 +35,9 @@ path_sample_config = dir_project_root / "sample_cookiecutter_mymcpserver_config.
 # ------------------------------------------------------------------------------
 dir_docs_source = dir_project_root / "docs" / "source"
 dir_docs_build_html = dir_project_root / "docs" / "build" / "html"
+
+# ------------------------------------------------------------------------------
+# MCP Related
+# ------------------------------------------------------------------------------
+dir_home = Path.home()
+path_default_config = dir_home / f"{PACKAGE_NAME}.json"

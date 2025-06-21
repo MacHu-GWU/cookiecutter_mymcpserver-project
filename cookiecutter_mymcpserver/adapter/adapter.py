@@ -8,12 +8,12 @@ from pydantic import BaseModel, Field
 
 from ..config.api import Config
 
-from .tool_adapter import ToolAdapterMixin
+from .tools_adapter import ToolsAdapterMixin
 
 
 class Adapter(
     BaseModel,
-    ToolAdapterMixin,
+    ToolsAdapterMixin,
 ):
     """
     Master adapter class that integrates configuration MCP tool implementations.
