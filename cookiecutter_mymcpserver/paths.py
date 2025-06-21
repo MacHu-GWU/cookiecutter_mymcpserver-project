@@ -26,6 +26,9 @@ dir_unit_test = dir_project_root / "tests"
 dir_int_test = dir_project_root / "tests_int"
 dir_load_test = dir_project_root / "tests_load"
 
+# the sample configuration file for testing
+path_sample_config = dir_project_root / "sample_cookiecutter_mymcpserver_config.json"
+
 # ------------------------------------------------------------------------------
 # Doc Related
 # ------------------------------------------------------------------------------
