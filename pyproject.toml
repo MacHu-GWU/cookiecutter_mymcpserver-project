@@ -43,7 +43,6 @@ classifier = [
 # Core Dependencies
 # ------------------------------------------------------------------------------
 dependencies = [
-    "mcp[cli]>=1.9.3,<2.0.0",
     "enum_mate>=0.1.1,<1.0.0", # Enum utilities
     "which_runtime>=0.1.1,<1.0.0", # Determine the runtime environment
     "requests>=2.23.2,<4.0.0", # HTTP library
@@ -58,6 +57,10 @@ dependencies = [
 # IMPORTANT: all optional dependencies has to be compatible with the "requires-python" field
 # ------------------------------------------------------------------------------
 [project.optional-dependencies]
+mcp = [
+    "mcp[cli]>=1.9.3,<2.0.0",
+    "fire>=0.7.0,<1.0.0", # Command line interface library
+]
 
 # ------------------------------------------------------------------------------
 # Local Development dependenceies
