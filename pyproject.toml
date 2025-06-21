@@ -46,6 +46,7 @@ dependencies = [
     "mcp[cli]>=1.9.3,<2.0.0",
     "enum_mate>=0.1.1,<1.0.0", # Enum utilities
     "which_runtime>=0.1.1,<1.0.0", # Determine the runtime environment
+    "requests>=2.23.2,<4.0.0", # HTTP library
     "vislog>=0.1.2,<1.0.0", # Visualize log files
 ]
 
