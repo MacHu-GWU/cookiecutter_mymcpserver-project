@@ -45,7 +45,14 @@ class MCPEnum(BaseMcpEnum):
         name=f"{PACKAGE_NAME}_dev_docker",
         settings={
             "command": "docker",
-            "args": ["run", "-i", "--rm", "cookiecutter-mymcpserver:latest"],
+            "args": [
+                "run",
+                "-i",
+                "--rm",
+                "--mount",
+                f"type=bind,source={path_sample_config},target=/usr/src/app/config.json",
+                "cookiecutter-mymcpserver:latest",
+            ],
         },
     )
     COOKIECUTTER_MYMCPSERVER_PRE_RELEASE = Mcp(
@@ -76,8 +83,8 @@ class MCPEnum(BaseMcpEnum):
 
 wanted_mcps = {
     # MCPEnum.COOKIECUTTER_MYMCPSERVER_DEV_PYTHON,
-    MCPEnum.COOKIECUTTER_MYMCPSERVER_DEV_CLI,
-    # MCPEnum.COOKIECUTTER_MYMCPSERVER_DEV_DOCKER,
+    # MCPEnum.COOKIECUTTER_MYMCPSERVER_DEV_CLI,
+    MCPEnum.COOKIECUTTER_MYMCPSERVER_DEV_DOCKER,
     # MCPEnum.COOKIECUTTER_MYMCPSERVER_PRE_RELEASE,
     # MCPEnum.COOKIECUTTER_MYMCPSERVER,
 }

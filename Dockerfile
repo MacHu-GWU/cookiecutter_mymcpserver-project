@@ -1,7 +1,7 @@
 # --- Docker build ---
 # docker build -t cookiecutter-mymcpserver:latest .
 # --- Docker run ---
-# docker run -it --rm -v /Users/sanhehu/Documents/GitHub/cookiecutter_mymcpserver-project:/usr/src/app cookiecutter-mymcpserver:latest
+# docker run -it --rm --mount type=bind,source=/Users/sanhehu/Documents/GitHub/cookiecutter_mymcpserver-project/sample_cookiecutter_mymcpserver_config.json,target=/usr/src/app/config.json cookiecutter-mymcpserver:latest
 # ECR Gallery https://gallery.ecr.aws/docker/library/python
 # --- stage 1 ---
 # we install dependencies and run unit test
@@ -51,7 +51,7 @@ COPY cookiecutter_mymcpserver/ ./cookiecutter_mymcpserver
 RUN poetry install && \
     ls -la /usr/src/app/.venv/bin/ >&2 && \
     du /usr/src/app/.venv/ -H
-ENTRYPOINT ["/usr/src/app/.venv/bin/python", "-m", "cookiecutter_mymcpserver.app"]
+ENTRYPOINT ["/usr/src/app/.venv/bin/cookiecuttermymcpserver"]
 CMD ["--config", "/usr/src/app/config.json"]
 
 
@@ -67,5 +67,5 @@ ARG PARAMETER_NAME
 # RUN env
 COPY --from=build /usr/src/app/.venv ./.venv
 COPY --from=build /usr/src/app/cookiecutter_mymcpserver ./cookiecutter_mymcpserver
-ENTRYPOINT ["/usr/src/app/.venv/bin/python", "-m", "cookiecutter_mymcpserver.app"]
+ENTRYPOINT ["/usr/src/app/.venv/bin/cookiecuttermymcpserver"]
 CMD ["--config", "/usr/src/app/config.json"]
