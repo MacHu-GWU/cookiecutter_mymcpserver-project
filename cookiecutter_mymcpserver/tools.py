@@ -15,7 +15,7 @@ def get_description(method: T.Callable) -> str:
 
 
 @mcp.tool(
-    description=get_description(adapter.tool_list_databases),
+    description=get_description(adapter.tool_get_forecast),
 )
 async def get_forecast(
     latitude: float,

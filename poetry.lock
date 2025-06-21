@@ -613,6 +613,24 @@ files = [
 ]
 
 [[package]]
+name = "claude-desktop-config"
+version = "0.2.1"
+description = "A Python library for programmatically managing Claude Desktop's configurations."
+optional = true
+python-versions = "<4.0,>=3.9"
+groups = ["main"]
+markers = "extra == \"test\""
+files = [
+    {file = "claude_desktop_config-0.2.1-py3-none-any.whl", hash = "sha256:a6d430dd44c7576bfefa6a65a3bb8ba82e0b4673113ea5fd3361f37ab18fd327"},
+    {file = "claude_desktop_config-0.2.1.tar.gz", hash = "sha256:f80638871bfbcb1089e1facd79b1c2bbc4017c6652d706cf5f9d6c3233b76801"},
+]
+
+[package.extras]
+dev = ["build (>=1.2.1,<2.0.0)", "rich (>=13.8.1,<14.0.0)", "twine (>=6.0.0,<7.0.0)", "wheel (>=0.45.0,<1.0.0)"]
+doc = ["Sphinx (>=7.4.7,<8.0.0)", "docfly (==3.0.0)", "furo (==2024.8.6)", "ipython (>=8.18.1,<8.19.0)", "nbsphinx (>=0.8.12,<1.0.0)", "pygments (>=2.18.0,<3.0.0)", "rstobj (==1.2.1)", "sphinx-copybutton (>=0.5.2,<1.0.0)", "sphinx-design (>=0.6.1,<1.0.0)", "sphinx-jinja (>=2.0.2,<3.0.0)"]
+test = ["pytest (>=8.2.2,<9.0.0)", "pytest-cov (>=6.0.0,<7.0.0)"]
+
+[[package]]
 name = "click"
 version = "8.2.1"
 description = "Composable command line interface toolkit"
@@ -3449,9 +3467,9 @@ type = ["pytest-mypy"]
 auto = []
 dev = ["build", "rich", "twine", "wheel"]
 doc = ["Sphinx", "docfly", "furo", "ipython", "nbsphinx", "pygments", "rstobj", "sphinx-copybutton", "sphinx-design", "sphinx-jinja"]
-test = ["aws-cdk-lib", "boto3", "boto_session_manager", "cdk_mate", "cdkit", "pytest", "pytest-cov", "s3pathlib"]
+test = ["aws-cdk-lib", "boto3", "boto_session_manager", "cdk_mate", "cdkit", "claude_desktop_config", "pytest", "pytest-cov", "s3pathlib"]
 
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<4.0"
-content-hash = "c8c32fde20541454fa77fe9ebd4028aec78a8bd7ddf6495fa81c1d6180283149"
+content-hash = "5b946b73d810baf79dd933271274f138233d803aea602f509b858ecf17762135"

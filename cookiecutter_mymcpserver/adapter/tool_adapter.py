@@ -21,4 +21,4 @@ class ToolAdapterMixin:
     ) -> str:
         return get_forecast(latitude, longitude)
 
-    tool_get_forecast.__doc__ = get_forecast.__doc__
+ToolAdapterMixin.tool_get_forecast.__doc__ = get_forecast.__doc__

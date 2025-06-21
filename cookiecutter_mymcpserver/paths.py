@@ -5,6 +5,7 @@ from pathlib import Path
 dir_here = Path(__file__).absolute().parent
 dir_package = dir_here
 PACKAGE_NAME = dir_package.name
+PACKAGE_NAME_SLUG = PACKAGE_NAME.replace("_", "-")
 
 dir_project_root = dir_package.parent
 

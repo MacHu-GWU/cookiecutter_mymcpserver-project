@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# uncomment this line when running this directly in venv Python
 from cookiecutter_mymcpserver.create_app import create_app
 
 

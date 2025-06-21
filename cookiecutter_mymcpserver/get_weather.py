@@ -27,7 +27,15 @@ def get_forecast(latitude: float, longitude: float) -> str:
 
     :return: Formatted weather forecast string or error message
 
-    Example::
+    Example latitude and longitude:
+
+        - Washington, DC: 38.8951, -77.0364
+        - San Francisco, CA: 37.7749, -122.4194
+        - New York, NY: 40.7128, -74.0060
+        - Chicago, IL: 41.8781, -87.6298
+        - Seattle, WA: 47.6062, -122.3321
+
+    Example returns::
 
         Today:
         Temperature: 92°F
