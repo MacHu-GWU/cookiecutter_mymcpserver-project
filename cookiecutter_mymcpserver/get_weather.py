@@ -24,6 +24,15 @@ def get_forecast(latitude: float, longitude: float) -> str:
 
     :param latitude: Latitude of the location
     :param longitude: Longitude of the location
+
+    :return: Formatted weather forecast string or error message
+
+    Example::
+
+        Today:
+        Temperature: 92°F
+        Wind: 2 to 7 mph S
+        Forecast: Mostly sunny, with a high near 92. South wind 2 to 7 mph.
     """
     # First get the forecast grid endpoint
     points_url = f"{NWS_API_BASE}/points/{latitude},{longitude}"
